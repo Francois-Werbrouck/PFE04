@@ -1,59 +1,84 @@
-Guide de Lancement du Prototype IA – 
+# Guide de Lancement du Prototype IA –
 
-Prérequis
+## Prérequis
 
-Python 3.9+
-React
-npm
-FastAPI
-Uvicorn
-Vite
-Clé API OpenAI (ou Google Gemini)
+- Python 3.9+
+- React
+- npm
+- FastAPI
+- Uvicorn
+- Vite
+- Clé API OpenAI (ou Google Gemini)
 
-Lancement du Backend (FastAPI)
+## Lancement du Backend (FastAPI)
 
-1. Créer un environnement virtuel :
-python -m venv venv
-venv\Scripts\activate sous Windows
+1. Créer un environnement virtuel :
 
-2. Installer les dépendances :
-pip install -r requirements.txt
+   ```bash
+   python -m venv venv
+   # Sous Windows :
+   venv\Scripts\activate
+   ```
 
-3. Créer un fichier `.env` avec :
-API_KEY=ta_cle_api
+2. Installer les dépendances :
 
-4. Lancer le serveur :
-uvicorn main:app --reload
+   ```bash
+   pip install -r requirements.txt
+   ```
 
-Accès Swagger : http://localhost:8000/docs
+3. Créer un fichier `.env` avec :
 
-Lancement du Frontend (React + Vite)
+    ```env
+    API_KEY=<ta_cle_api>
+    ```
 
-1. Aller dans le dossier : cd frontend
+4. Lancer le serveur :
 
-2. Installer les dépendances :npm install
+    ```bash
+    uvicorn main:app --reload
+    ```
 
-3. Lancer le projet :
-npm run dev
+5. Accès Swagger : <http://localhost:8000/docs>
 
-Interface : http://localhost:5173
+## Lancement du Frontend (React + Vite)
 
-Optionnel : Dockerisation
+1. Aller dans le dossier :
 
-1. Créer un Dockerfile pour backend et frontend
+    ```bash
+    cd frontend
+    ```
 
-2. Créer un docker-compose.yml
+2. Installer les dépendances :
 
-3. Lancer avec : docker-compose up --build
+    ```bash
+    npm install
+    ```
 
-Vérification finale
+3. Lancer le projet :
 
-Swagger est accessible
+    ```bash
+    npm run dev
+    ```
 
-L’interface s’ouvre bien en local
+4. Interface : <http://localhost:5173>
 
-Les prompts sont envoyés à l’API
+### Optionnel : Dockerisation
 
-Les cas de test sont générés
+1. Créer un Dockerfile pour backend et frontend
 
-Acces à la BDD :  https://cloud.mongodb.com/
+2. Créer un `docker-compose.yml`
+
+3. Lancer avec :
+
+    ```bash
+    docker-compose up --build
+    ```
+
+## Vérification finale
+
+- Swagger est accessible
+- L’interface s’ouvre bien en local
+- Les prompts sont envoyés à l’API
+- Les cas de test sont générés
+
+Accès à la BDD :  <https://cloud.mongodb.com/>
